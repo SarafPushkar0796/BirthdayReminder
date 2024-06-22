@@ -1,70 +1,84 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Birthday Reminder
 
-## Available Scripts
+Birthday Reminder is a React application that helps you keep track of birthdays and sends notifications to remind you of upcoming birthdays. The app can also be installed as a Progressive Web App (PWA) for easy access.
 
-In the project directory, you can run:
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Add, Edit, and Delete Birthdays: Easily manage a list of birthdays.
+- Notifications: Get reminders for upcoming birthdays.
+- Search Functionality: Quickly find a birthday by name.
+- PWA Installation: Install the app on your device for quick access.
+- Export/Import Data: Export birthdays to a CSV file and import from a CSV file.
+- GitHub Actions CI/CD: Automatically deploy the app to GitHub Pages on every push to the main branch.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clone repository
 
-### `npm run build`
+```bash
+  git clone https://github.com/<username>/BirthdayReminder.git
+  cd BirthdayReminder
+```
+Install dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+  npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Run the app locally
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+  npm start
+```
+    
+## Deployment
 
-### `npm run eject`
+This project is set up to deploy automatically to GitHub Pages using GitHub Actions. On every push to the main branch, the application will be built and deployed.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+  npm run build
+  npm run deploy
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Lessons Learned
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+What did you learn while building this project? What challenges did you face and how did you overcome them?
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage/Examples
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Adding a Birthday
+- Enter the name and date of birth in the form.
+- Click the "Add Birthday" button.
 
-### Code Splitting
+Editing a Birthday
+- Click the "Edit" button on the birthday card.
+- Modify the details in the dialog box and click "Update".
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Deleting a Birthday
+- Click the "Delete" button on the birthday card.
+- Confirm the deletion in the dialog box.
 
-### Analyzing the Bundle Size
+Exporting/Importing Birthdays
+- Click the "Export" / "Import" button.
+- A CSV file with your birthdays will be downloaded or can be uploaded respectively.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Notifications
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- The app requests notification permissions on the first visit.
+- Notifications are sent for upcoming birthdays within the next week.
+- If notifications are denied, an alert is shown informing the user that notifications won't be available.
 
-### Advanced Configuration
+## PWA Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- When you visit the app for the first time, a snackbar with an "Install" button will appear.
+- Click "Install" to add the app to your home screen or desktop.
+## License
 
-### Deployment
+[MIT](https://choosealicense.com/licenses/mit/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
