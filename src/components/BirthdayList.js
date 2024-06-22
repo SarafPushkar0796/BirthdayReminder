@@ -74,12 +74,20 @@ const BirthdayList = (dateOfBirth) => {
 
     const sendNotification = (upcomingBirthdays) => {
         if ('Notification' in window && Notification.permission === 'granted') {
+            const sentNotifications = JSON.parse(localStorage.getItem('sentNotifications')) || {};
+
             upcomingBirthdays.forEach((birthday) => {
-                new Notification('Upcoming Birthday', {
-                    body: `Don't forget ${birthday.name}'s birthday is coming up!`,
-                    icon: '/path/to/icon.png', // Optional: Add an icon for the notification
-                });
+                if (!sentNotifications[birthday.id]) {
+                    new Notification('Upcoming Birthday', {
+                        body: `Don't forget ${birthday.name}'s birthday is coming up!`,
+                        icon: '/path/to/icon.png', // Optional: Add an icon for the notification
+                    });
+                    sentNotifications[birthday.id] = true;
+                }
             });
+
+            // setting localStorage item to not send duplicate notifications for same birthday's
+            localStorage.setItem('sentNotifications', JSON.stringify(sentNotifications));
         }
     };
 
@@ -91,7 +99,7 @@ const BirthdayList = (dateOfBirth) => {
             if (upcoming.length > 0) {
                 sendNotification(upcoming);
             }
-        }, 60 * 60 * 1000); // Check once a day
+        }, 5000); // Check once a day
 
         return () => clearInterval(interval);
     }, [birthdays]);
