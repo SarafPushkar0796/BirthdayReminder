@@ -124,6 +124,7 @@ const BirthdayList = (dateOfBirth) => {
                                 <Input
                                     id="import-file-input"
                                     type="file"
+                                    accept=".csv, text/csv"
                                     style={{ display: 'none' }}
                                     onChange={handleImport}
                                 />
