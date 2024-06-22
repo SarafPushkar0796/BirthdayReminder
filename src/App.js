@@ -84,6 +84,11 @@ function App() {
 		};
 
 		window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+
+		// cleanup function to remove the beforeinstallprompt event listener when the component is unmounted.
+		return () => {
+			window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+		};
 	}, []);
 
 	const handleInstallClick = () => {
