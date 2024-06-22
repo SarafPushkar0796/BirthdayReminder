@@ -9,65 +9,10 @@ import BirthdayList from './components/BirthdayList';
 import CssBaseline from '@mui/material/CssBaseline';
 import { fontUse } from './theme.js';
 
-import { BirthdayContext } from './components/BirthdayContext';
-
 function App() {
 		
-	const { birthdays } = useContext(BirthdayContext);
-	const [notificationDenied, setNotificationDenied] = useState(false);
 	const [deferredPrompt, setDeferredPrompt] = useState(null);
-	const [showInstallPrompt, setShowInstallPrompt] = useState(false);
-
-	// Notification request
-	const requestNotificationPermission = () => {
-		if ('Notification' in window) {
-			Notification.requestPermission().then(permission => {
-				if (permission === 'denied') {
-					setNotificationDenied(true);
-				}
-			});
-		}
-	};
-
-	// check for upcoming birthdays
-	const checkUpcomingBirthdays = (birthdays) => {
-		const today = new Date();
-		const upcoming = birthdays.filter((birthday) => {
-			const birthDate = new Date(birthday.dateOfBirth);
-			const upcomingDate = new Date(today);
-			upcomingDate.setDate(today.getDate() + 7); // Check for birthdays within the next week
-			return (
-				birthDate.getDate() === upcomingDate.getDate() &&
-				birthDate.getMonth() === upcomingDate.getMonth()
-			);
-		});
-		return upcoming;
-	};
-
-	// send notification for upcoming birthday
-	const sendNotification = (upcomingBirthdays) => {
-		if ('Notification' in window && Notification.permission === 'granted') {
-			upcomingBirthdays.forEach((birthday) => {
-				new Notification('Upcoming Birthday', {
-					body: `Don't forget ${birthday.name}'s birthday is coming up!`,
-					icon: '/path/to/icon.png', // Optional: Add an icon for the notification
-				});
-			});
-		}
-	};
-
-	useEffect(() => {
-		requestNotificationPermission();
-
-		const interval = setInterval(() => {
-			const upcoming = checkUpcomingBirthdays(birthdays);
-			if (upcoming.length > 0) {
-				sendNotification(upcoming);
-			}
-		}, 24 * 60 * 60 * 1000); // Check once a day
-
-		return () => clearInterval(interval);
-	}, [birthdays]);
+	const [showInstallPrompt, setShowInstallPrompt] = useState(false);	
 
 	// For app installation
 	useEffect(() => {
@@ -131,14 +76,6 @@ function App() {
 						</Box>
 					</Grid>
 				</Grid>
-
-				{notificationDenied && (
-					<Snackbar open={notificationDenied} autoHideDuration={6000}>
-						<Alert severity="warning" sx={{ width: '100%' }}>
-							Notifications are disabled. The app won't be able to remind you of upcoming birthdays.
-						</Alert>
-					</Snackbar>
-				)}
 
 				<Snackbar
 					open={showInstallPrompt}
