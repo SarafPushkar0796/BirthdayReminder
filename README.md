@@ -19,7 +19,7 @@ Birthday Reminder is a React application that helps you keep track of birthdays 
 Clone repository
 
 ```bash
-  git clone https://github.com/<username>/BirthdayReminder.git
+  git clone https://github.com/SarafPushkar0796/BirthdayReminder.git
   cd BirthdayReminder
 ```
 Install dependencies
