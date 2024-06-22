@@ -99,7 +99,7 @@ const BirthdayList = (dateOfBirth) => {
             if (upcoming.length > 0) {
                 sendNotification(upcoming);
             }
-        }, 5000); // Check once a day
+        }, 60 * 1000); // Check every minute
 
         return () => clearInterval(interval);
     }, [birthdays]);
