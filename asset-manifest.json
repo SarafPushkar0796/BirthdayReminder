@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.acfa1e87.css",
-    "main.js": "/static/js/main.5c0a3ca4.js",
-    "static/js/453.8a3506bd.chunk.js": "/static/js/453.8a3506bd.chunk.js",
-    "index.html": "/index.html",
-    "main.acfa1e87.css.map": "/static/css/main.acfa1e87.css.map",
-    "main.5c0a3ca4.js.map": "/static/js/main.5c0a3ca4.js.map",
-    "453.8a3506bd.chunk.js.map": "/static/js/453.8a3506bd.chunk.js.map"
+    "main.css": "/BirthdayReminder/index.html/static/css/main.acfa1e87.css",
+    "main.js": "/BirthdayReminder/index.html/static/js/main.cf85fd38.js",
+    "static/js/453.8a3506bd.chunk.js": "/BirthdayReminder/index.html/static/js/453.8a3506bd.chunk.js",
+    "index.html": "/BirthdayReminder/index.html/index.html",
+    "main.acfa1e87.css.map": "/BirthdayReminder/index.html/static/css/main.acfa1e87.css.map",
+    "main.cf85fd38.js.map": "/BirthdayReminder/index.html/static/js/main.cf85fd38.js.map",
+    "453.8a3506bd.chunk.js.map": "/BirthdayReminder/index.html/static/js/453.8a3506bd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.acfa1e87.css",
-    "static/js/main.5c0a3ca4.js"
+    "static/js/main.cf85fd38.js"
   ]
 }
